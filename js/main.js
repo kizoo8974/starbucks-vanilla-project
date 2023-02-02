@@ -18,6 +18,7 @@ searchInputEl.addEventListener('blur', function () {
 
 const badgeEl = document.querySelector('header .badges');
 
+//making badges using lodash.js & gsap
 window.addEventListener('scroll', _.throttle(function () {
     console.log(window.scrollY);
     if (window.scrollY > 500) {
