@@ -338,9 +338,17 @@ header .badges .badge {
 }
 .notice .notice-line .inner__left .swiper-container {
     height: 62px;
-    background-color: orange;
     flex-grow: 1;
 }
+.notice .notice-line .inner__left .swiper-container .swiper-slide {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+.notice .notice-line .inner__left .swiper-container .swiper-slide a {
+    color: #fff;
+}
+
 .notice .notice-line .inner__left .notice-line__more {
     width: 62px;
     height: 62px;
