@@ -17,6 +17,7 @@ searchInputEl.addEventListener('blur', function () {
 
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 //making badges using lodash.js & gsap
 window.addEventListener('scroll', _.throttle(function () {
@@ -26,14 +27,28 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 0,
             display: 'none'
         });
+        gsap.to('#to-top', .2, {
+            x: 0
+        });
     } else {
         gsap.to(badgeEl, .6, {
             opacity: 1,
             display: 'block'
         });
+        // gsap scroll to plugin
+        gsap.to('#to-top', .2, {
+            x: 100
+        });
     }
 }, 300));
 // _.throttle(function, mil.sec)
+
+
+toTopEl.addEventListener('click', function () {
+    gsap.to(window, .7, {
+        scrollTo: 0
+    });
+});
 
 // Visual images fade in 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
